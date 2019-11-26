@@ -26,6 +26,5 @@ public class AdminControler {
 
         model.addAttribute("invalidCredentials", true);
         return "admin_login_panel";
-
     }
 }
