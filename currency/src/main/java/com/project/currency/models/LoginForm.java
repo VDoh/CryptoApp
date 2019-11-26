@@ -1,11 +1,11 @@
 package com.project.currency.models;
 
-public class AdminLoginForm {
+public class LoginForm {
 
     private String username;
     private String password;
 
-    public AdminLoginForm(){
+    public LoginForm(){
         super();
     }
 

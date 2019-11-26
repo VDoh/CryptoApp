@@ -1,6 +1,6 @@
 package com.project.currency.controlers;
 
-import com.project.currency.models.AdminLoginForm;
+import com.project.currency.models.LoginForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,7 +16,7 @@ public class AdminControler {
     }
     //reqmapping jako arg value = "path"
     @RequestMapping(method = RequestMethod.POST)
-    public String login(@ModelAttribute(name = "loginForm") AdminLoginForm loginForm, Model model){
+    public String login(@ModelAttribute(name = "loginForm") LoginForm loginForm, Model model){
         String username = loginForm.getUsername();
         String password = loginForm.getPassword();
 
@@ -29,3 +29,4 @@ public class AdminControler {
 
     }
 }
+
