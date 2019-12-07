@@ -11,6 +11,15 @@
 <body>
 <!--header.html  that's here  -->
 <div th:replace="fragments/header :: header"></div>
+<form th:action="@{/crypto}" th:object="${loginForm}" method="post">
+    <select class="form-control"  name="message_number" id="messageNumber">
+        <option th:value="0" text="Please Select"></option>
+        <option  th:value = "${cryptoList}"></option>
+    </select>
+    <br/>
+    <input type="submit" value="check"/>
+</form>
+
 
 Crypto
 
