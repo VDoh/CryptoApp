@@ -4,7 +4,11 @@ public class ApiCall
 {
     private String currency;
 
+<<<<<<< HEAD
     public ApiCall (){
+=======
+    public ApiCall(){
+>>>>>>> master
         super();
     }
 
@@ -15,4 +19,8 @@ public class ApiCall
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 }
