@@ -11,17 +11,18 @@
 <body>
 <!--header.html  that's here  -->
 <div th:replace="fragments/header :: header"></div>
-<form th:action="@{/crypto}" th:object="${loginForm}" method="post">
-    <select class="form-control"  name="message_number" id="messageNumber">
-        <option th:value="0" text="Please Select"></option>
-        <option  th:value = "${cryptoList}"></option>
+<form th:action="@{/crypto}" th:object="${ApiCall}" method="post">
+    <select name="currency" id="currency" style="display: block;">
+        <option value = "BTC">BTC</option>
+        <option value = "ETH">ETH</option>
+        <option value = "USDT">USDT</option>
+        <option value = "XRP">XRP</option>
+        <option value = "BCH">BCH</option>
     </select>
     <br/>
     <input type="submit" value="check"/>
 </form>
-
-
-Crypto
+CryptoBa
 
 <!--footer.html  that's here  -->
 <div th:replace="fragments/footer :: footer"></div>

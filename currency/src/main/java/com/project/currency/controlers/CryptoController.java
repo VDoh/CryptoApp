@@ -1,5 +1,6 @@
 package com.project.currency.controlers;
 
+import com.project.currency.models.ApiCall;
 import com.project.currency.models.LoginForm;
 import org.apache.http.HttpEntity;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.*;
@@ -21,14 +23,22 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
+@RequestMapping("/crypto")
 public class CryptoController {
     private static String apiKeyCoinMarket = "31eaa970-1cc5-4934-8004-548bc722d381";
     private static String apiKeyNomics = "ba1909c740d22cc80430f8da9b9a8d19";
 
-    public static String makeAPICallCoinMarket(String uri, List<NameValuePair> parameters)
+    @RequestMapping(method = RequestMethod.GET)
+    public String showYourAss(){
+        return "crypto";
+    }
+
+    public static String makeAPICallCoinMarket(String uri, List<NameValuePair> parameters,String coin)
             throws URISyntaxException, IOException {
         String response_content = "";
 
@@ -61,10 +71,10 @@ public class CryptoController {
 
         return priceStirng;
     }
-    public static String makeAPICallNomics()
+    public static String makeAPICallNomics(String coin)
             throws URISyntaxException, IOException {
             String response_content = "";
-            String url = "https://api.nomics.com/v1/currencies/ticker?key=ba1909c740d22cc80430f8da9b9a8d19&ids=BTC&interval=1d,30d&convert=USD";
+            String url = MessageFormat.format("https://api.nomics.com/v1/currencies/ticker?key=ba1909c740d22cc80430f8da9b9a8d19&ids={0}&interval=1d,30d&convert=USD", coin);
             URIBuilder query = new URIBuilder(url);
             CloseableHttpClient client = HttpClients.createDefault();
             HttpGet request = new HttpGet(query.build());
@@ -85,19 +95,21 @@ public class CryptoController {
         return priceUSD;
     }
 
-    @GetMapping("/crypto")
-    public String showCrypto(@ModelAttribute(name = "loginForm") LoginForm loginForm, Model model){
-
+    @RequestMapping(method = RequestMethod.POST)
+    public String showCrypto(@ModelAttribute(name = "ApiCall") ApiCall apiCall, Model model){
+        String coin = apiCall.getCurrency();
+        System.out.println(coin);
         model.addAttribute("misraMessages", getCryptoList());
         String uri = "https://pro-api.coinmarketcap.com/v1/tools/price-conversion";
         List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
-        paratmers.add(new BasicNameValuePair("id","1"));
+
+        paratmers.add(new BasicNameValuePair("symbol",coin));
         paratmers.add(new BasicNameValuePair("amount","1"));
         paratmers.add(new BasicNameValuePair("convert","USD"));
 
         try {
-            String result = makeAPICallCoinMarket(uri, paratmers);
-            String result2 = makeAPICallNomics();
+            String result = makeAPICallCoinMarket(uri, paratmers,coin);
+            String result2 = makeAPICallNomics(coin);
             System.out.println(result);
             System.out.println( result2);
         } catch (IOException e) {
