@@ -1,5 +1,6 @@
 package com.project.currency.controlers;
 
+import com.project.currency.models.ApiCall;
 import com.project.currency.models.LoginForm;
 import org.apache.http.HttpEntity;
 import org.springframework.stereotype.Controller;
@@ -21,11 +22,24 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
+@RequestMapping("crypto")
 public class CryptoController {
     private static String apiKey = "31eaa970-1cc5-4934-8004-548bc722d381";
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String initForm(Model model) {
+        ApiCall crypto = new ApiCall();
+        model.addAttribute("crypto", crypto);
+        getCryptoList(model);
+        return "colour";
+    }
+
 
     public static String makeAPICall(String uri, List<NameValuePair> parameters)
             throws URISyntaxException, IOException {
@@ -54,10 +68,8 @@ public class CryptoController {
         return response_content;
     }
 
-    @GetMapping("/crypto")
-    public String showCrypto(@ModelAttribute(name = "loginForm") LoginForm loginForm, Model model){
-
-        model.addAttribute("misraMessages", getCryptoList());
+    @RequestMapping(method = RequestMethod.POST)
+    public String showCrypto(@ModelAttribute(name = "apiValues") ApiCall apiCall, Model model){
         String uri = "https://pro-api.coinmarketcap.com/v1/tools/price-conversion";
         List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
         paratmers.add(new BasicNameValuePair("id","1"));
@@ -77,13 +89,13 @@ public class CryptoController {
     }
 
     @ModelAttribute("cryptoList")
-    public List<String> getCryptoList() {
-        List<String> cryptoList = new ArrayList<String>();
-        cryptoList.add("BTC");
-        cryptoList.add("ETH");
-        cryptoList.add("BCH");
-        cryptoList.add("LTC");
-        cryptoList.add("BNB");
-        return cryptoList;
+    public void getCryptoList(Model model) {
+        List<String> crypto = new ArrayList<String>();
+        crypto.add("BTC");
+        crypto.add("ETH");
+        crypto.add("BCH");
+        crypto.add("LTC");
+        crypto.add("BNB");
+        model.addAttribute("crypto", crypto);
     }
 }

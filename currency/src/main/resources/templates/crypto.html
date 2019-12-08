@@ -11,8 +11,9 @@
 <body>
 <!--header.html  that's here  -->
 <div th:replace="fragments/header :: header"></div>
-<form th:action="@{/crypto}" th:object="${loginForm}" method="post">
-    <select path="country">
+<form th:action="@{/crypto}" th:object="${apiCall}" method="post">
+    <select path="currency">
+        <option value = "NONE" label = "Select"/>
         <options items="${cryptoList}" />
     </select>
     <br/>
