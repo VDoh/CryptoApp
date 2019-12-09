@@ -1,8 +1,5 @@
 package com.project.currency.arbs;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,13 +10,15 @@ import java.time.Duration;
 public class Scanner implements Runnable {
 
     private String exchange;
+    private String currency;
     private String url;
     private int delay;
 
-    public Scanner(String exchange, String url, int delay) {
+    public Scanner(String exchange, String currency, String url, int delay) {
         System.out.println("Run new Scanner for " + exchange);
         this.exchange = exchange;
-        this.url = url;
+        this.currency = currency;
+        this.url = url.replaceAll("CURRENCY", currency);
         this.delay = delay;
     }
 
@@ -29,6 +28,7 @@ public class Scanner implements Runnable {
             URL url = new URL(this.url);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
+            System.out.println(currency);
             int responseCode = con.getResponseCode();
             System.out.println("GET Response Code: " + responseCode);
             if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -60,7 +60,8 @@ public class Scanner implements Runnable {
             }
 
             String data = getData();
-            Processor.getInstance().updateOrderbook(exchange, data);
+//            System.out.println(data);
+            Processor.getInstance().updateOrderbook(exchange, currency, data);
         }
     }
 }

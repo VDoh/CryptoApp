@@ -39,6 +39,11 @@ public class Orderbook {
         asks.add(order);
     }
 
+    public void clearOrderbook () {
+        asks.clear();
+        bids.clear();
+    }
+
     public ArrayList<Order> getAsks() {
         return asks;
     }
