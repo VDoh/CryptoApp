@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CurrencyApplication {
 
 	public static void main(String[] args) {
-		MainArbs mainArbs = new MainArbs();
+		SpringApplication.run(CurrencyApplication.class, args);
 	}
 
 }
