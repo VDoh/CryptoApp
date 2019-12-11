@@ -8,9 +8,7 @@ import com.project.currency.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,17 +24,11 @@ public class AdminControler {
     @Autowired
     UserRepository repo;
 
-
     @RequestMapping(method = RequestMethod.GET)
     public String getStartContent() {
         return "admin_login_panel";
     }
     //reqmapping jako arg value = "path"
-
-    @RequestMapping(value = "/panel", method = RequestMethod.GET)
-    public String panelContent() {
-        return "admin_panel";
-    }
 
     @RequestMapping(method = RequestMethod.POST)
     public String login(@ModelAttribute(name = "loginForm") LoginForm loginForm, Model model) {
@@ -62,22 +54,29 @@ public class AdminControler {
         return "admin_login_panel";
     }
 
-    @RequestMapping(value = "panel/manage", method = RequestMethod.GET)
-    public String manage(Model model){
+    @RequestMapping(value = "/panel", method = RequestMethod.GET)
+    public String panelContent() {
+        return "admin_panel";
+    }
 
+    @RequestMapping(value = "panel/manage", method = RequestMethod.GET)
+    public String userList(Model model){
 
         List<User> list = service.getUsers();
         model.addAttribute("users", repo.findAll());
         return "admin_manage_users";
     }
 
-    /*
-    @RequestMapping(value = "/panel/manage", method = RequestMethod.GET)
-    public ModelAndView users() {
+    @RequestMapping(value = "panel/manage", params = {"id"} ,method = RequestMethod.GET)
+    public String getUser(@RequestParam("id") Long id, Model model){
 
-        List<User> list = service.getUsers();
-
-    */
+        User user = service.getUser(id);
+        model.addAttribute(user);
+        return "admin_manage_single_user";
+    }
 }
+
+
+
 
 

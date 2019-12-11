@@ -11,19 +11,18 @@
 <body>
 <div th:replace="fragments/admin_header :: header"></div>
 
-
 <ul class="collection">
 
     <tr th:each="users: ${users}">
     <li class="collection-item avatar">
-        <i class="material-icons circle red">play_arrow</i>
+        <i class="material-icons circle red">USER</i>
         <span class="title">
             <p th:text="${users.nick}" />
         </span>
         <p> <p th:text="${users.email}" />
             <p th:text="${users.user_type}" />
         </p>
-        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        <a th:href="@{'/admin/panel/manage'(id=${users.id_user})}" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>
     </tr>
 </ul>

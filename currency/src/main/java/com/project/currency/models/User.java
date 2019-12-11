@@ -8,14 +8,15 @@ import javax.persistence.Id;
 public class User {
 
     @Id
-    private int id_user;
+    @GeneratedValue
+    private long id_user;
 
     private int user_type;
     private String nick;
     private String email;
     private String password;
 
-    public int getId_user() {
+    public long getId_user() {
         return id_user;
     }
 
