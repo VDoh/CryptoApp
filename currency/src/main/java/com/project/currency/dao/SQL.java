@@ -1,10 +1,6 @@
 package com.project.currency.dao;
 import java.sql.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
 public class SQL {
     public Connection connect() {
         // SQLite connection string
