@@ -18,90 +18,198 @@
 <!--header.html  that's here  -->
 <div th:replace="fragments/header :: header"></div>
 <div class="centerShit">
-<table class="flat-table flat-table-1">
-    <thead>
-    <th>Currency</th>
-    <th>Market</th>
-    <th>Price</th>
-    <th>Change</th>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Btc</td>
-        <td>1111111111$</td>
-        <td>7k$</td>
-        <td>-0.12$</td>
-    </tr>
-    <tr>
-        <td>ETH</td>
-        <td>12$</td>
-        <td>2k$</td>
-        <td>12.0$</td>
-    </tr>
-    </tbody>
-</table>
-</div>
-<div class="btn-group">
-    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action
-    </button>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" value = "BTC">BTC</a>
-        <a class="dropdown-item" value = "ETH">ETH</a>
-        <a class="dropdown-item" value = "USDT">USDT</a>
-        <a class="dropdown-item" value = "XRP">XRP</a>
-        <a class="dropdown-item" value = "BCH">BCH</a>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>MarketCap</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr></tr>
+            <tbody>
+        </table>
     </div>
 </div>
 <!--footer.html  that's here  -->
 <div th:replace="fragments/footer :: footer"></div>
 <style>
 
-.centerShit{
-  text-align:center;
-    width:70%;
-    margin-left:35%;
-    margin-right:15%;
+/* table */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
-.flat-table {
-        margin-bottom: 20px;
-        border-collapse:collapse;
-        font-family: 'Lato', Calibri, Arial, sans-serif;
-        border: none;
-                border-radius: 3px;
-               -webkit-border-radius: 3px;
-               -moz-border-radius: 3px;
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table thead th:first-child {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 1px;
+    max-width: 1px;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table  th:first-child {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 1px;
+    max-width: 1px;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
     }
-    .flat-table th, .flat-table td {
-        box-shadow: inset 0 -1px rgba(0,0,0,0.25),
-            inset 0 1px rgba(0,0,0,0.25);
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
     }
-    .flat-table th {
-        font-weight: normal;
-        -webkit-font-smoothing: antialiased;
-        padding: 1em;
-        color: rgba(0,0,0,0.45);
-        text-shadow: 0 0 1px rgba(0,0,0,0.1);
-        font-size: 1.5em;
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
     }
-    .flat-table td {
-        color: #f7f7f7;
-        padding: 0.7em 1em 0.7em 1.15em;
-        text-shadow: 0 0 1px rgba(255,255,255,0.1);
-        font-size: 1.4em;
+    .fl-table thead th:last-child{
+        border-bottom: none;
     }
-    .flat-table tr {
-        -webkit-transition: background 0.3s, box-shadow 0.3s;
-        -moz-transition: background 0.3s, box-shadow 0.3s;
-        transition: background 0.3s, box-shadow 0.3s;
+    .fl-table thead {
+        float: left;
     }
-    .flat-table-1 {
-        background: #336ca6;
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
     }
-    .flat-table-1 tr:hover {
-        background: rgba(0,0,0,0.19);
+
+    .f1-table  td:first-child {
+          border-left: none;
+          width: 10px;
+          min-width: 10px;
+          max-width: 10px;
     }
+    .f1-table thead th:first-child {
+          border-left: none;
+          width: 10px;
+          min-width: 10px;
+          max-width: 10px;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+
 
 /* FOR ALL*/
 
