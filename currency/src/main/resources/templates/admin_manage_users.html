@@ -15,14 +15,15 @@
 
     <tr th:each="users: ${users}">
     <li class="collection-item avatar">
-        <i class="material-icons circle red">USER</i>
+        <i class="material-icons circle red"></i>
         <span class="title">
+            <a>User nick: </a>
             <p th:text="${users.nick}" />
         </span>
-        <p> <p th:text="${users.email}" />
-            <p th:text="${users.user_type}" />
+        <p><a>Email:</a> <p th:text="${users.email}" />
+        <a>User type:</a> <p th:text="${users.user_type}" />
         </p>
-        <a th:href="@{'/admin/panel/manage'(id=${users.id_user})}" class="secondary-content"><i class="material-icons">grade</i></a>
+        <a th:href="@{'/admin/panel/manage'(id=${users.id_user})}" class="secondary-content"><i class="material-icons">Update User</i></a>
     </li>
     </tr>
 </ul>

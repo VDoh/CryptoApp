@@ -3,6 +3,7 @@ package com.project.currency.controlers;
 import com.project.currency.dao.SQL;
 import com.project.currency.models.LoginForm;
 import com.project.currency.models.User;
+import com.project.currency.models.UserChangeForm;
 import com.project.currency.repositories.UserRepository;
 import com.project.currency.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,8 +72,37 @@ public class AdminControler {
     public String getUser(@RequestParam("id") Long id, Model model){
 
         User user = service.getUser(id);
-        model.addAttribute(user);
+        model.addAttribute("user",user);
         return "admin_manage_single_user";
+    }
+
+    @RequestMapping(value = "panel/manage", params = {"id"} ,method = RequestMethod.POST)
+    public String makeUserChange(@RequestParam("id") Long id, @ModelAttribute(name="form") UserChangeForm form) {
+
+        String user_type = form.getUser_type();
+        String nick = form.getNick();
+        String email = form.getEmail();
+        String delAcc = form.getDelAcc();
+
+        service.makeUserChange(id, user_type,nick, email, delAcc);
+
+        return "redirect:/admin/panel";
+    }
+    @RequestMapping(value = "panel/create", method = RequestMethod.GET)
+    public String loadUserCreationForm(){
+        return "admin_create_user";
+    }
+    @RequestMapping(value = "panel/create", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute(name="form") User form){
+
+        int user_type = form.getUser_type();
+        String nick = form.getNick();
+        String email = form.getEmail();
+        String password = form.getPassword();
+
+        service.createUser(user_type, nick,email,password);
+
+        return "redirect:/admin/panel";
     }
 }
 

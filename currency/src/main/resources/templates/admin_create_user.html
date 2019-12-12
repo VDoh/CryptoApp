@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta charset="ISO-8859-1">
+</head>
+<body>
+<div th:replace="fragments/admin_header :: header"></div>
+
+<div class="row">
+    <form th:action="@{/admin/panel/create}" th:object="${form}" class="col s6" method="post">
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="email">Email</label>
+                <input id="email" type="email" class="validate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="nick">Nick</label>
+                <input id="nick" type="text" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="user_type">User type</label>
+                <input id="user_type" name="user_type" type="text">
+            </div>
+        </div>
+        <br/>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Create User
+            <i class="material-icons right"></i>
+        </button>
+    </form>
+</div>
+
+</body>

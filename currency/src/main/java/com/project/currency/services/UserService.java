@@ -2,9 +2,11 @@ package com.project.currency.services;
 
 import com.project.currency.models.User;
 import com.project.currency.repositories.UserRepository;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.expression.ExpressionException;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -14,6 +16,7 @@ public class UserService {
 
     @Autowired
     private UserRepository repo;
+    private JdbcTemplate jdbcTemplate;
 
     public List<User> getUsers(){
         return (List<User>) repo.findAll();
@@ -25,38 +28,36 @@ public class UserService {
         return user.get();
     }
 
-    private static String[] parseKeyValue(String token) {
-        if (token == null || token.equals("")) {
-            return null;
+    public void makeUserChange(Long id, String user_type, String nick, String email, String delAcc){
+        User getUser = this.getUser(id);
+
+        if(delAcc.equals("yes")){
+            repo.delete(getUser);
+            return;
         }
-
-        token = token.trim();
-
-        int index = token.indexOf("=");
-
-        if (index == -1) {
-            return new String[] { token.trim(), "" };
-        } else {
-            return new String[] { token.substring(0, index).trim(),
-                    token.substring(index + 1).trim() };
+        if((user_type=="") == false){
+            Integer type = Integer.parseInt(user_type);
+            getUser.setUser_type(type);
         }
-
+        if(!(nick=="")){
+            getUser.setNick(nick);
+        }
+        if(!(email=="")){
+            getUser.setEmail(email);
+        }
+        repo.save(getUser);
     }
+    public void createUser(Integer user_type, String nick, String email, String password){
+        User newUser = new User();
 
-    public void makeUserChange(Long id, String ... changes){
+        newUser.setUser_type(user_type);
+        newUser.setNick(nick);
+        newUser.setEmail(email);
 
-        Properties properties = new Properties();
+        String hashedPassword = DigestUtils.md5Hex(password).toUpperCase();
+        newUser.setPassword(hashedPassword);
 
-        for (String param : changes) {
-            String[] pair = parseKeyValue(param);
-
-            if (pair != null) {
-                properties.setProperty(pair[0], pair[1]);
-            }
-
-        }
-
+        repo.save(newUser);
     }
-
 }
 
