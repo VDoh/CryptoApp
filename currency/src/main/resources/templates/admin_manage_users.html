@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta charset="ISO-8859-1">
+</head>
+<body>
+<div th:replace="fragments/admin_header :: header"></div>
+
+<ul class="collection">
+
+    <tr th:each="users: ${users}">
+    <li class="collection-item avatar">
+        <i class="material-icons circle red"></i>
+        <span class="title">
+            <a>User nick: </a>
+            <p th:text="${users.nick}" />
+        </span>
+        <p><a>Email:</a> <p th:text="${users.email}" />
+        <a>User type:</a> <p th:text="${users.user_type}" />
+        </p>
+        <a th:href="@{'/admin/panel/manage'(id=${users.id_user})}" class="secondary-content"><i class="material-icons">Update User</i></a>
+    </li>
+    </tr>
+</ul>
+
+</body>

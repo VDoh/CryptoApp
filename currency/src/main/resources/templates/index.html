@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet">
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <link rel="stylesheet" href="\resources\css\mycss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <meta charset="ISO-8859-1">
 </head>
 <body>
@@ -14,6 +19,211 @@
 
 <!--footer.html  that's here  -->
 <div th:replace="fragments/footer :: footer"></div>
+<style>
+body
+{
+background-color: #15DgEc; /* The page background will be black */
+color: white; /* The page text will be white */
+}
+
+#mainnav ul {
+list-style: none;
+float: right;
+width: 900px;
+}
+
+#mainnav ul li {
+position: relative;
+}
+
+#mainnav ul li.has-mega-menu {
+position: static;
+}
+
+#mainnav > ul > li {
+display: inline-block;
+}
+
+#mainnav > ul > li > a {
+position: relative;
+display: block;
+font-size: 15px;
+line-height: 93px;
+padding: 0 18.5px;
+outline: none;
+color: #fff;
+font-family: "Roboto", sans-serif;
+font-weight: 500;
+text-transform: uppercase;
+}
+
+#mainnav > ul > li > a:after {
+position: absolute;
+left: 0;
+bottom: -5px;
+content: "";
+width: 0;
+height: 5px;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+#mainnav > ul > li.home > a:after {
+width: 100%;
+background-color: #0263d4;
+z-index: 9999;
+}
+
+#mainnav > ul > li > a:hover {
+color: #0263d4 ;
+text-decoration: none;
+}
+
+body {
+margin: 0;
+font-family: 'Raleway', sans-serif;
+}
+
+header {
+background:url("https://pp.userapi.com/c840024/v840024924/8363f/J27Us9Z4-48.jpg");
+}
+
+.containt {
+max-width: 1168px;
+margin: auto;
+text-align: center;
+}
+
+.wrapper {
+width: 100%;
+text-align: right;
+padding: 30px 0;
+border-bottom: 1px solid rgba(255,255,255, 0.3);
+background: transparent;
+opacity: 0.5;
+left: 0px;
+transition: all 0.5s;
+z-index: 2;
+}
+
+.logo {
+position: absolute;
+top : 70px;
+}
+
+.containt nav ul {
+display: inline-block;
+list-style: none;
+padding-left: 0;
+}
+
+
+
+.more {
+margin-top: 50px;
+}
+
+.row {
+display: block;
+margin: auto;
+width: 100%;
+font-size: 0;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+footer {
+background: #0263D4;
+ position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.resize {
+width: 40px;
+height: auto;
+}
+
+.footer-top {
+display: block;
+font-size: 0;
+padding: 20px 0;
+bottom: 0;
+}
+
+.footer-top > div {
+width: calc(100% / 3);
+display: inline-block;
+vertical-align: top;
+font-size: 14px;
+
+}
+.location h4, .social-icons h4, .about-activebox h4 {
+color: #fff;
+text-transform: uppercase;
+}
+.location p, .about-activebox p {
+color: rgba(255,255,255, 0.5);
+}
+
+.footer-top .social-icons ul {
+list-style: none;
+padding-left: 0;
+}
+.social-icons ul li {
+display: inline-block;
+border: 2px solid #fff;
+border-radius: 2px;
+background: transparent;
+transition: all 0.3s;
+}
+.social-icons a {
+display: block;
+padding: 8px 10px;
+text-decoration: none;
+color: #fff;
+font-size: 15px;
+}
+
+.social-icons li:hover {
+background: orangered;
+border: 2px solid orangered;
+}
+
+.footer-bottom {
+background: #144F9E;
+width: 100%;
+}
+
+.info {
+max-width: 500px;
+display: block;
+margin: auto;
+padding: 30px 0;
+}
+
+.info p {
+color: #ccc;
+text-align: center;
+margin: 0;
+}
+
+.info a {
+color: #fff;
+text-decoration: none;
+}
+
+.info a:hover {
+color: orangered;
+}
+
+.info span {
+color: red;
+}
+</style>
 </body>
 </html>
 

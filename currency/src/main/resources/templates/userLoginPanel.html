@@ -9,6 +9,7 @@
     <meta charset="ISO-8859-1">
 </head>
 <body>
+
 <h1>LoginForm</h1>
 <form th:action="@{/user}" th:object="${loginForm}" method="post">
     <p th:if="${invalidCredentials}" class="error"> username or password wrong <p/>

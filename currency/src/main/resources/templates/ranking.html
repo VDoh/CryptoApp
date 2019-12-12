@@ -1,20 +1,428 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <meta charset="ISO-8859-1">
 </head>
 <body>
 <!--header.html  that's here  -->
 <div th:replace="fragments/header :: header"></div>
-
-Ranking
-
+<div class="centerShit">
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>MarketCap</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="currency : ${list}">
+                <td><img class="resize" th:src="${currency.Logo}"></td>
+                <td th:text="${currency.Currency}"></td>
+                <td th:text="${currency.Price}"></td>
+                <td th:text="${currency.PctChange}"></td>
+                <td th:text="${currency.MarketCap}"></td>
+            </tr>
+            <tbody>
+        </table>
+    </div>
+</div>
 <!--footer.html  that's here  -->
 <div th:replace="fragments/footer :: footer"></div>
+<style>
+
+/* table */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.resize{
+width: 30px;
+height: auto;
+}
+
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table thead th:first-child {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 10px;
+    max-width: 10px;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table  th:first-child {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 10px;
+    max-width: 10px;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+
+    .f1-table  td:first-child {
+          border-left: none;
+          width: 10px;
+          min-width: 10px;
+          max-width: 10px;
+    }
+    .f1-table thead th:first-child {
+          border-left: none;
+          width: 10px;
+          min-width: 10px;
+          max-width: 10px;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+
+/* FOR ALL*/
+
+
+
+body
+{
+background-color: #15DgEc; /* The page background will be black */
+color: white; /* The page text will be white */
+}
+
+#mainnav ul {
+list-style: none;
+float: right;
+width: 900px;
+}
+
+#mainnav ul li {
+position: relative;
+}
+
+#mainnav ul li.has-mega-menu {
+position: static;
+}
+
+#mainnav > ul > li {
+display: inline-block;
+}
+
+#mainnav > ul > li > a {
+position: relative;
+display: block;
+font-size: 15px;
+line-height: 93px;
+padding: 0 18.5px;
+outline: none;
+color: #fff;
+font-family: "Roboto", sans-serif;
+font-weight: 500;
+text-transform: uppercase;
+}
+
+#mainnav > ul > li > a:after {
+position: absolute;
+left: 0;
+bottom: -5px;
+content: "";
+width: 0;
+height: 5px;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+#mainnav > ul > li.home > a:after {
+width: 100%;
+background-color: #0263d4;
+z-index: 9999;
+}
+
+#mainnav > ul > li > a:hover {
+color: #0263d4 ;
+text-decoration: none;
+}
+
+body {
+margin: 0;
+font-family: 'Raleway', sans-serif;
+}
+
+header {
+background:url("https://pp.userapi.com/c840024/v840024924/8363f/J27Us9Z4-48.jpg");
+}
+
+.containt {
+max-width: 1168px;
+margin: auto;
+text-align: center;
+}
+
+.wrapper {
+width: 100%;
+text-align: right;
+padding: 30px 0;
+border-bottom: 1px solid rgba(255,255,255, 0.3);
+background: transparent;
+opacity: 0.5;
+left: 0px;
+transition: all 0.5s;
+z-index: 2;
+}
+
+.logo {
+position: absolute;
+top : 70px;
+}
+
+.containt nav ul {
+display: inline-block;
+list-style: none;
+padding-left: 0;
+}
+
+
+
+.more {
+margin-top: 50px;
+}
+
+.row {
+display: block;
+margin: auto;
+width: 100%;
+font-size: 0;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+footer {
+background: #0263D4;
+ position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.resize {
+width: 40px;
+height: auto;
+}
+
+.footer-top {
+display: block;
+font-size: 0;
+padding: 20px 0;
+bottom: 0;
+}
+
+.footer-top > div {
+width: calc(100% / 3);
+display: inline-block;
+vertical-align: top;
+font-size: 14px;
+
+}
+.location h4, .social-icons h4, .about-activebox h4 {
+color: #fff;
+text-transform: uppercase;
+}
+.location p, .about-activebox p {
+color: rgba(255,255,255, 0.5);
+}
+
+.footer-top .social-icons ul {
+list-style: none;
+padding-left: 0;
+}
+.social-icons ul li {
+display: inline-block;
+border: 2px solid #fff;
+border-radius: 2px;
+background: transparent;
+transition: all 0.3s;
+}
+.social-icons a {
+display: block;
+padding: 8px 10px;
+text-decoration: none;
+color: #fff;
+font-size: 15px;
+}
+
+.social-icons li:hover {
+background: orangered;
+border: 2px solid orangered;
+}
+
+.footer-bottom {
+background: #144F9E;
+width: 100%;
+}
+
+.info {
+max-width: 500px;
+display: block;
+margin: auto;
+padding: 30px 0;
+}
+
+.info p {
+color: #ccc;
+text-align: center;
+margin: 0;
+}
+
+.info a {
+color: #fff;
+text-decoration: none;
+}
+
+.info a:hover {
+color: orangered;
+}
+
+.info span {
+color: red;
+}
+</style>
 </body>
 </html>
