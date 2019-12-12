@@ -1,6 +1,6 @@
 package com.project.currency.models;
 
-public class CurrencyInfo
+public class CurrencyInfo implements Comparable
 {
     private String Currency;
     private String Price;
@@ -52,4 +52,8 @@ public class CurrencyInfo
         this.Logo = logo;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        return this.getCurrency().compareTo(((CurrencyInfo) o).getCurrency());
+    }
 }
