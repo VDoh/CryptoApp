@@ -99,7 +99,7 @@ public class AdminControler {
         String nick = form.getNick();
         String email = form.getEmail();
         String password = form.getPassword();
-
+        
         service.createUser(user_type, nick,email,password);
 
         return "redirect:/admin/panel";
