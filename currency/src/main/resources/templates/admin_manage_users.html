@@ -6,26 +6,31 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="ISO-8859-1">
 </head>
 <body>
 <div th:replace="fragments/admin_header :: header"></div>
 
+<div class="row">
+<div class="col s6 push-s3">
 <ul class="collection">
 
     <tr th:each="users: ${users}">
     <li class="collection-item avatar">
-        <i class="material-icons circle red"></i>
+        <i class="material-icons circle red">face</i>
         <span class="title">
             <a>User nick: </a>
-            <p th:text="${users.nick}" />
+            <i th:text="${users.nick}" />
         </span>
-        <p><a>Email:</a> <p th:text="${users.email}" />
-        <a>User type:</a> <p th:text="${users.user_type}" />
+        <p><a>Email:</a> <i th:text="${users.email}" /></p>
+        <p>
+        <a>User type:</a> <i th:text="${users.user_type}" />
         </p>
-        <a th:href="@{'/admin/panel/manage'(id=${users.id_user})}" class="secondary-content"><i class="material-icons">Update User</i></a>
+        <a th:href="@{'/admin/panel/manage'(id=${users.id_user})}" class="secondary-content">Update User</a>
     </li>
     </tr>
 </ul>
-
+</div>
+</div>
 </body>

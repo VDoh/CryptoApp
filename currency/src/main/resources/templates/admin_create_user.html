@@ -6,42 +6,46 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="ISO-8859-1">
 </head>
 <body>
 <div th:replace="fragments/admin_header :: header"></div>
 
-<div class="row">
+
+<div class="row center">
+    <div class="col s12 push-s3">
     <form th:action="@{/admin/panel/create}" th:object="${form}" class="col s6" method="post">
-        <div class="row">
+        <div class="row center">
             <div class="input-field col s12">
                 <label for="email">Email</label>
                 <input id="email" name="email" type="email" class="validate">
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
+        <div class="row center">
+            <div class="input-field col s12 center">
                 <label for="nick">Nick</label>
                 <input id="nick" name="nick" type="text" >
             </div>
         </div>
-        <div class="row">
+        <div class="row center">
             <div class="input-field col s12">
                 <label for="password">Password</label>
                 <input id="password" name="password" type="password">
             </div>
         </div>
-        <div class="row">
+        <div class="row center">
             <div class="input-field col s12">
                 <label for="user_type">User type</label>
                 <input id="user_type" name="user_type" type="text">
             </div>
         </div>
         <br/>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Create User
+        <button class="btn waves-effect waves-teal" type="submit" name="action">Create User
             <i class="material-icons right"></i>
         </button>
     </form>
+    </div>
 </div>
 
 </body>
