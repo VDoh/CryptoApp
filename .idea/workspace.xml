@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7164e878-e8a3-47b6-9de6-815388235bb8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/currency/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,38 +49,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#805#806#0" expanded="true" />
-                <element signature="e#840#841#0" expanded="true" />
-                <element signature="e#874#875#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -93,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="668">
-              <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
+            <state relative-caret-position="313">
+              <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="42" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,13 +75,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/crypto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="450">
               <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -129,20 +108,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Data.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#563#564#0" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -154,21 +119,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Orderbook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+            <state relative-caret-position="480">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#323#324#0" expanded="true" />
                 <element signature="e#360#361#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Exchange.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -202,7 +158,6 @@
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Orderbook.java" />
         <option value="$PROJECT_DIR$/currency/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/currency/src/main/resources/templates/admin_create_user.html" />
-        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Data.java" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java" />
@@ -210,6 +165,8 @@
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java" />
         <option value="$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java" />
       </list>
     </option>
   </component>
@@ -281,34 +238,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="currency" type="462c0819:PsiDirectoryNode" />
-              <item name="arbs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CryptoApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CryptoApp" type="462c0819:PsiDirectoryNode" />
-              <item name="currency" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="currency" type="462c0819:PsiDirectoryNode" />
               <item name="controlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CryptoApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CryptoApp" type="462c0819:PsiDirectoryNode" />
-              <item name="currency" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CryptoApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CryptoApp" type="462c0819:PsiDirectoryNode" />
-              <item name="currency" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -397,13 +327,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34748000" />
+    <option name="totallyTimeSpent" value="35181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1629393" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1629393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -413,7 +343,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2980198" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2980198" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26831684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -421,7 +351,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.26138613" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.52970296" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32970297" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32970297" />
@@ -625,33 +555,12 @@
     <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2079">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Orderbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-          <folding>
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -675,25 +584,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java">
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
+        <state relative-caret-position="930">
+          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/crypto.html">
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="255">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Orderbook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -711,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
@@ -728,20 +643,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java">
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java">
+    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/crypto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="42" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
         </state>
       </provider>
     </entry>

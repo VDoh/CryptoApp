@@ -18,6 +18,8 @@ public class CurrencyApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CurrencyApplication.class, args);
+
+		//run arbs module
 		MainArbs.getInstance().run();
 	}
 
