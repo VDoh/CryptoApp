@@ -2,14 +2,25 @@ package com.project.currency.models;
 
 public class ArbModel {
 
+    private String currency;
     private String bidExch;
     private String askExch;
     private Float bid;
     private Float ask;
     private Float arbVal;
 
-    public ArbModel(){
+    public ArbModel(String currency, String bidExch, String askExch, Float bid, Float ask, Float arbVal){
         super();
+        this.currency = currency;
+        this.bidExch = bidExch;
+        this.askExch = askExch;
+        this.bid = bid;
+        this. ask = ask;
+        this.arbVal = arbVal;
+    }
+
+    public String getCurrency() {
+        return currency;
     }
 
     public String getBidExch() {

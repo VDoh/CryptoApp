@@ -1,5 +1,7 @@
 package com.project.currency.arbs;
 
+import com.project.currency.models.ArbModel;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Map;
@@ -10,11 +12,20 @@ import java.util.concurrent.Future;
 
 public class MainArbs {
 
+    private static MainArbs instance = null;
+    public static MainArbs getInstance()
+    {
+        if (instance == null)
+            instance = new MainArbs();
+
+        return instance;
+    }
+
     private ArrayList<Exchange> exchanges;
     private ArrayList<String> currencies;
     private int delay = 2;
 
-    public MainArbs() {
+    public void run() {
         try {
             exchanges = new ArrayList<>();
             currencies = new ArrayList<>();
@@ -43,8 +54,12 @@ public class MainArbs {
                 executorService.shutdown();
 
                 if (arbPairs != null) {
+                    Data.getInstance().clearList();
                     for (Map.Entry<String, Processor.Pair> entry : arbPairs.entrySet()) {
                         Processor.Pair arbPair = entry.getValue();
+
+                        ArbModel arb = new ArbModel(entry.getKey(), arbPair.getBidExch(), arbPair.getAskExch(), arbPair.getBid(), arbPair.getAsk(), arbPair.getArbVal());
+                        Data.getInstance().addToList(arb);
 
                         System.out.println(entry.getKey());
                         System.out.println(" ");

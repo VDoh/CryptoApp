@@ -105,6 +105,7 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
     }
 
     private void updateBitbay(String json, String currency) {
+        System.out.println("Update Bitbay " + currency);
         if (BitBay.get(currency) == null)
             BitBay.put(currency, new Orderbook());
 
@@ -126,6 +127,7 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
     }
 
     private void updateBitmart(String json, String currency) {
+        System.out.println("Update Bitmart " + currency);
         if (BitMart.get(currency) == null)
             BitMart.put(currency, new Orderbook());
 
