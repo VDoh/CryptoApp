@@ -75,6 +75,8 @@ public class MainArbs {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
     }
 

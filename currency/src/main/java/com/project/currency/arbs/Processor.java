@@ -109,20 +109,22 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
         if (BitBay.get(currency) == null)
             BitBay.put(currency, new Orderbook());
 
-        BitBay.get(currency).clearOrderbook();
-        JSONArray bidsArray = new JSONObject(json).getJSONArray("bids");
-        JSONArray asksArray = new JSONObject(json).getJSONArray("asks");
+        if (json != null) {
+            BitBay.get(currency).clearOrderbook();
+            JSONArray bidsArray = new JSONObject(json).getJSONArray("bids");
+            JSONArray asksArray = new JSONObject(json).getJSONArray("asks");
 
-        for (Object obj : bidsArray) {
-            Float[] data = castStringToArray(obj.toString());
-            Orderbook.Order order = BitBay.get(currency).new Order(data[0], data[1]);
-            BitBay.get(currency).addToBids(order);
-        }
+            for (Object obj : bidsArray) {
+                Float[] data = castStringToArray(obj.toString());
+                Orderbook.Order order = BitBay.get(currency).new Order(data[0], data[1]);
+                BitBay.get(currency).addToBids(order);
+            }
 
-        for (Object obj : asksArray) {
-            Float[] data = castStringToArray(obj.toString());
-            Orderbook.Order order = BitBay.get(currency).new Order(data[0], data[1]);
-            BitBay.get(currency).addToAsks(order);
+            for (Object obj : asksArray) {
+                Float[] data = castStringToArray(obj.toString());
+                Orderbook.Order order = BitBay.get(currency).new Order(data[0], data[1]);
+                BitBay.get(currency).addToAsks(order);
+            }
         }
     }
 
@@ -131,20 +133,22 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
         if (BitMart.get(currency) == null)
             BitMart.put(currency, new Orderbook());
 
-        BitMart.get(currency).clearOrderbook();
-        JSONArray bidsArray = new JSONObject(json).getJSONArray("buys");
-        JSONArray asksArray = new JSONObject(json).getJSONArray("sells");
+        if (json != null) {
+            BitMart.get(currency).clearOrderbook();
+            JSONArray bidsArray = new JSONObject(json).getJSONArray("buys");
+            JSONArray asksArray = new JSONObject(json).getJSONArray("sells");
 
-        for (Object obj : bidsArray) {
-            JSONObject orderBid = new JSONObject(obj.toString());
-            Orderbook.Order order = BitMart.get(currency).new Order(Float.valueOf(orderBid.getString("price")), Float.valueOf(orderBid.getString("amount")));
-            BitMart.get(currency).addToBids(order);
-        }
+            for (Object obj : bidsArray) {
+                JSONObject orderBid = new JSONObject(obj.toString());
+                Orderbook.Order order = BitMart.get(currency).new Order(Float.valueOf(orderBid.getString("price")), Float.valueOf(orderBid.getString("amount")));
+                BitMart.get(currency).addToBids(order);
+            }
 
-        for (Object obj : asksArray) {
-            JSONObject orderAsk = new JSONObject(obj.toString());
-            Orderbook.Order order = BitMart.get(currency).new Order(Float.valueOf(orderAsk.getString("price")), Float.valueOf(orderAsk.getString("amount")));
-            BitMart.get(currency).addToAsks(order);
+            for (Object obj : asksArray) {
+                JSONObject orderAsk = new JSONObject(obj.toString());
+                Orderbook.Order order = BitMart.get(currency).new Order(Float.valueOf(orderAsk.getString("price")), Float.valueOf(orderAsk.getString("amount")));
+                BitMart.get(currency).addToAsks(order);
+            }
         }
     }
 

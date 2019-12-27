@@ -17,9 +17,14 @@
     <script type="text/javascript">
         function ajaxFnc() {
             $.ajax({
-                url : 'updatearbs.html',
+                url : '/updatearbs',
                 success : function(data) {
                     console.log(data);
+                    var html = '';
+                    $.each(data, function(key, arb) {
+                        html +="<tr><td>" + arb.currency + "</td><td>" + arb.askExch + "</td><td>" + arb.ask + "</td><td>" + arb.bidExch + "</td><td>" + arb.bid + "</td><td>" + arb.arbVal + "</td></tr>";
+                    });
+                    $('#tabBody').html(html);
                 },
                 error: function (e) {
                     console.log("ERROR : ", e);
@@ -41,19 +46,23 @@
 <div th:replace="fragments/header :: header"></div>
 <div class="centerShit">
     <div class="table-wrapper">
-        <table class="fl-table">
+        <table id="arbTable" class="fl-table">
             <thead>
             <tr>
                 <th></th>
-                <th>Ask</th>
-                <th>Bid</th>
-                <th>Value</th>
+                <th>Ask Exch. </th>
+                <th>Ask [USD] </th>
+                <th>Bid Exch. </th>
+                <th>Bid [USD] </th>
+                <th>Value [%] </th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="tabBody">
             <tr th:each="arb : ${list}">
                 <td th:text="${arb.currency}"></td>
+                <td th:text="${arb.askExch}"></td>
                 <td th:text="${arb.ask}"></td>
+                <td th:text="${arb.bidExch}"></td>
                 <td th:text="${arb.bid}"></td>
                 <td th:text="${arb.arbVal}"></td>
             </tr>

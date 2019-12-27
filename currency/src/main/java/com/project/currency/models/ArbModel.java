@@ -15,7 +15,7 @@ public class ArbModel {
         this.bidExch = bidExch;
         this.askExch = askExch;
         this.bid = bid;
-        this. ask = ask;
+        this.ask = ask;
         this.arbVal = arbVal;
     }
 
@@ -41,5 +41,9 @@ public class ArbModel {
 
     public Float getArbVal() {
         return arbVal;
+    }
+
+    public String toString() {
+        return "{currency: " + this.currency + ", bid: " + this.bid + ", ask: " + this.ask + ", value: " + arbVal + "}";
     }
 }

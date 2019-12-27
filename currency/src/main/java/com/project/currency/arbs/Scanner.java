@@ -60,7 +60,7 @@ public class Scanner implements Runnable {
             }
 
             String data = getData();
-//            System.out.println(data);
+            System.out.println(data);
             Processor.getInstance().updateOrderbook(exchange, currency, data);
         }
     }
