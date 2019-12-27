@@ -1,6 +1,7 @@
 package com.project.currency.controlers;
 
 import com.project.currency.models.ApiCall;
+import com.project.currency.models.ChartObject;
 import com.project.currency.models.LoginForm;
 import org.apache.http.HttpEntity;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.json.*;
 
@@ -34,7 +37,10 @@ public class CryptoController {
     private static String apiKeyNomics = "ba1909c740d22cc80430f8da9b9a8d19";
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showYourAss(){
+    public String showYourAss(Model model){
+        model.addAttribute("chartData", new ChartObject());
+        model.addAttribute("nomics", "");
+        model.addAttribute("coinMarket", "");
         return "crypto";
     }
 
@@ -95,6 +101,43 @@ public class CryptoController {
         return priceUSD;
     }
 
+    private static JSONObject getHistoryPrices (String crypto)
+            throws URISyntaxException, IOException {
+        String response_content = "";
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String endDate = formatter.format(date) + "T00%3A00%3A00Z";
+        System.out.println(endDate);
+        date.setYear(date.getYear()-1);
+        String startDate = formatter.format(date) + "T00%3A00%3A00Z";
+        System.out.println(startDate);
+        String url = MessageFormat.format("https://api.nomics.com/v1/currencies/sparkline?key=ba1909c740d22cc80430f8da9b9a8d19&start={0}&end={1}", startDate, endDate);
+        URIBuilder query = new URIBuilder(url);
+        CloseableHttpClient client = HttpClients.createDefault();
+        HttpGet request = new HttpGet(query.build());
+        CloseableHttpResponse response = client.execute(request);
+
+        try {
+            System.out.println(response.getStatusLine());
+            HttpEntity entity = response.getEntity();
+            response_content = EntityUtils.toString(entity);
+            EntityUtils.consume(entity);
+        } finally {
+            response.close();
+        }
+
+        JSONArray cryptoArray = new JSONArray(response_content);
+
+        for (int i = 0; i < cryptoArray.length(); i++) {
+            JSONObject obj = cryptoArray.getJSONObject(i);
+            if (obj.getString("currency").equals(crypto)){
+                return obj;
+            }
+        }
+
+        return null;
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public String showCrypto(@ModelAttribute(name = "ApiCall") ApiCall apiCall, Model model){
         String coin = apiCall.getCurrency();
@@ -110,8 +153,33 @@ public class CryptoController {
         try {
             String result = makeAPICallCoinMarket(uri, paratmers,coin);
             String result2 = makeAPICallNomics(coin);
+            JSONObject obj = getHistoryPrices(coin);
+
             System.out.println(result);
-            System.out.println( result2);
+            System.out.println(result2);
+
+            model.addAttribute("nomics", result2);
+            model.addAttribute("coinMarket", result);
+
+            if (obj != null) {
+                System.out.println(obj.getString("currency"));
+                System.out.println(obj.getJSONArray("timestamps"));
+                System.out.println(obj.getJSONArray("prices"));
+
+                ArrayList<String> timestamps = new ArrayList();
+                for (int i = 0; i < obj.getJSONArray("timestamps").length(); timestamps.add(obj.getJSONArray("timestamps").getString(i++).split("T")[0]));
+
+                ArrayList<Double> prices = new ArrayList();
+                for (int i = 0; i < obj.getJSONArray("prices").length(); prices.add(Double.valueOf(obj.getJSONArray("prices").getString(i++))));
+
+                ChartObject chartObject = new ChartObject();
+                chartObject.setCurrency(obj.getString("currency"));
+                chartObject.setTimestamps(timestamps);
+                chartObject.setPrices(prices);
+
+                model.addAttribute("chartData", chartObject);
+            }
+
         } catch (IOException e) {
             System.out.println("Error: cannont access content - " + e.toString());
         } catch (URISyntaxException e) {
