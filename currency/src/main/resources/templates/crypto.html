@@ -12,30 +12,285 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
     <meta charset="ISO-8859-1">
+
 </head>
 <body>
 <!--header.html  that's here  -->
 <div th:replace="fragments/header :: header"></div>
-<form th:action="@{/crypto}" th:object="${ApiCall}" method="post">
-    <select name="currency" id="currency" style="display: block;">
-        <option value = "BTC">BTC</option>
-        <option value = "ETH">ETH</option>
-        <option value = "USDT">USDT</option>
-        <option value = "XRP">XRP</option>
-        <option value = "BCH">BCH</option>
-    </select>
-    <br/>
-    <input type="submit" value="check"/>
-</form>
-CryptoBa
+<div class="centerShit">
+    <center>
+        <h2>Cryptocurrency</h2>
+        <form th:action="@{/crypto}" th:object="${ApiCall}" method="post">
+            <select name="currency" id="currency" style="display: block;">
+                <option value = "BTC">BTC</option>
+                <option value = "ETH">ETH</option>
+                <option value = "USDT">USDT</option>
+                <option value = "XRP">XRP</option>
+                <option value = "BCH">BCH</option>
+            </select>
+            <br/>
+            <input type="submit" value="check"/>
+        </form>
+        <h2>Price</h2>
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Nomics</th>
+                    <th>CoinMarketCap</th>
+                </tr>
+                </thead>
+                    <td th:text="${chartData.currency}"></td>
+                    <td th:text="${nomics}"></td>
+                    <td th:text="${coinMarket}"></td>
+                <tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2 align="center">Chart</h2>
+
+            <div id="container"
+                 style="width: 800px; height: 600px; margin: 0 auto"></div>
+        </div>
+        <script
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script
+                src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script th:inline="javascript">
+            $(function(){
+                Highcharts.chart('container', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title: {
+                        text: [[${chartData.currency}]]
+                    },
+                    subtitle: {
+                        text: 'Date'
+                    },
+                    xAxis: {
+                        categories: [[${chartData.timestamps}]],
+                        crosshair: true
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Price'
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                            '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
+                        footerFormat: '</table>',
+                        shared: true,
+                        useHTML: true
+                    },
+                    series: [{
+                        name: 'Price',
+                        data: [[${chartData.prices}]]
+                    }]
+                });
+            });
+        </script>
+
+        <h2></h2>
+    </center>
+</div>
 
 <!--footer.html  that's here  -->
 <div th:replace="fragments/footer :: footer"></div>
 <style>
+/* table */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.centerShit
+{
+    margin-top: 20px;
+    height: 499px;
+    overflow: auto;
+}
+
+.centerShit th div {
+    position: absolute;
+    margin-top: -20px;
+}
+
+.resize{
+    width: 30px;
+    height: auto;
+}
+
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table thead th:first-child {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 10px;
+    max-width: 10px;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table  th:first-child {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 10px;
+    max-width: 10px;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+
+    .f1-table  td:first-child {
+        border-left: none;
+        width: 10px;
+        min-width: 10px;
+        max-width: 10px;
+    }
+    .f1-table thead th:first-child {
+        border-left: none;
+        width: 10px;
+        min-width: 10px;
+        max-width: 10px;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+
 body
 {
 background-color: #15DgEc; /* The page background will be black */
-color: white; /* The page text will be white */
+color: black; /* The page text will be white */
 }
 
 #mainnav ul {
