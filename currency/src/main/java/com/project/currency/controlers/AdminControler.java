@@ -4,8 +4,11 @@ import com.project.currency.dao.SQL;
 import com.project.currency.models.LoginForm;
 import com.project.currency.models.User;
 import com.project.currency.models.UserChangeForm;
+import com.project.currency.models.VipApplication;
 import com.project.currency.repositories.UserRepository;
+import com.project.currency.repositories.VipApplicationRepo;
 import com.project.currency.services.UserService;
+import com.project.currency.services.VipApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +27,8 @@ public class AdminControler {
     UserService service;
     @Autowired
     UserRepository repo;
+    @Autowired
+    VipApplicationService vaService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String getStartContent() {
@@ -92,6 +97,7 @@ public class AdminControler {
     public String loadUserCreationForm(){
         return "admin_create_user";
     }
+    
     @RequestMapping(value = "panel/create", method = RequestMethod.POST)
     public String addUser(@ModelAttribute(name="form") User form){
 
@@ -103,6 +109,14 @@ public class AdminControler {
         service.createUser(user_type, nick,email,password);
 
         return "redirect:/admin/panel";
+    }
+
+    @RequestMapping(value = "panel/req", method = RequestMethod.GET)
+    public String getApps(Model model){
+        List<VipApplication> list = vaService.apps();
+        model.addAttribute("list",list);
+
+        return "admin_display_applications";
     }
 }
 
