@@ -78,7 +78,8 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
         } else if (Exchange.equals("bitmart")) {
             updateBitmart(data, currency);
         } else {
-            System.out.printf("Other exchange");
+            if (MainArbs.getInstance().getLogs())
+                System.out.printf("Other exchange");
         }
     }
 
@@ -105,7 +106,9 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
     }
 
     private void updateBitbay(String json, String currency) {
-        System.out.println("Update Bitbay " + currency);
+        if (MainArbs.getInstance().getLogs())
+            System.out.println("Update Bitbay " + currency);
+
         if (BitBay.get(currency) == null)
             BitBay.put(currency, new Orderbook());
 
@@ -129,7 +132,9 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
     }
 
     private void updateBitmart(String json, String currency) {
-        System.out.println("Update Bitmart " + currency);
+        if (MainArbs.getInstance().getLogs())
+            System.out.println("Update Bitmart " + currency);
+
         if (BitMart.get(currency) == null)
             BitMart.put(currency, new Orderbook());
 
@@ -181,7 +186,9 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
 
     @Override
     public Map<String, Pair>  call() {
-        System.out.println(arbs.size());
+        if (MainArbs.getInstance().getLogs())
+            System.out.println(arbs.size());
+
         return compareData();
     }
 }

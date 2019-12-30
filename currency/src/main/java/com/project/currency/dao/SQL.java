@@ -5,7 +5,7 @@ public class SQL {
     public Connection connect() {
         // SQLite connection string
 
-        String url = "jdbc:sqlite:currency.db";
+        String url = "jdbc:sqlite:currency/currency.db";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);

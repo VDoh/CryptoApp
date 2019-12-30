@@ -17,7 +17,7 @@ public class Config {
     public DataSource dataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("org.sqlite.JDBC");
-        dataSourceBuilder.url("jdbc:sqlite:currency.db");
+        dataSourceBuilder.url("jdbc:sqlite:currency/currency.db");
         return dataSourceBuilder.build();
     }
 

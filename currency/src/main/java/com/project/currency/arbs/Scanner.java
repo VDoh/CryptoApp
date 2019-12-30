@@ -1,5 +1,6 @@
 package com.project.currency.arbs;
 
+import javax.net.ssl.SSLException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,22 +16,32 @@ public class Scanner implements Runnable {
     private int delay;
 
     public Scanner(String exchange, String currency, String url, int delay) {
-        System.out.println("Run new Scanner for " + exchange);
+        if (MainArbs.getInstance().getLogs())
+            System.out.println("Run new Scanner for " + exchange);
+
         this.exchange = exchange;
         this.currency = currency;
         this.url = url.replaceAll("CURRENCY", currency);
         this.delay = delay;
     }
 
-    private String getData(){
+    private String getData() {
         try {
-            System.out.println("Getting data...");
+            if (MainArbs.getInstance().getLogs())
+                System.out.println("Getting data...");
+
             URL url = new URL(this.url);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
-            System.out.println(currency);
+
+            if (MainArbs.getInstance().getLogs())
+                System.out.println(currency);
+
             int responseCode = con.getResponseCode();
-            System.out.println("GET Response Code: " + responseCode);
+
+            if (MainArbs.getInstance().getLogs())
+                System.out.println("GET Response Code: " + responseCode);
+
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 String inputLine;
@@ -41,9 +52,14 @@ public class Scanner implements Runnable {
                 in.close();
                 return response.toString();
             } else {
-                System.out.println("GET request not worked");
+                if (MainArbs.getInstance().getLogs())
+                    System.out.println("GET request not worked");
+
                 return null;
             }
+
+        } catch (SSLException e) {
+            return null;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -60,7 +76,10 @@ public class Scanner implements Runnable {
             }
 
             String data = getData();
-            System.out.println(data);
+
+            if (MainArbs.getInstance().getLogs())
+                System.out.println(data);
+
             Processor.getInstance().updateOrderbook(exchange, currency, data);
         }
     }

@@ -3,7 +3,10 @@ package com.project.currency.controlers;
 import com.project.currency.models.ApiCall;
 import com.project.currency.models.ChartObject;
 import com.project.currency.models.LoginForm;
+import com.project.currency.services.HistoryMeasureService;
+import com.project.currency.services.UserService;
 import org.apache.http.HttpEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +36,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/crypto")
 public class CryptoController {
+
+    @Autowired
+    private HistoryMeasureService service;
+
     private static String apiKeyCoinMarket = "31eaa970-1cc5-4934-8004-548bc722d381";
     private static String apiKeyNomics = "ba1909c740d22cc80430f8da9b9a8d19";
 
@@ -107,10 +114,8 @@ public class CryptoController {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String endDate = formatter.format(date) + "T00%3A00%3A00Z";
-        System.out.println(endDate);
         date.setYear(date.getYear()-1);
         String startDate = formatter.format(date) + "T00%3A00%3A00Z";
-        System.out.println(startDate);
         String url = MessageFormat.format("https://api.nomics.com/v1/currencies/sparkline?key=ba1909c740d22cc80430f8da9b9a8d19&start={0}&end={1}", startDate, endDate);
         URIBuilder query = new URIBuilder(url);
         CloseableHttpClient client = HttpClients.createDefault();
@@ -160,6 +165,12 @@ public class CryptoController {
 
             model.addAttribute("nomics", result2);
             model.addAttribute("coinMarket", result);
+
+            Date date = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyy hh:mm:ss ");
+            String measureDate = formatter.format(date);
+
+            service.addMeasure(0L, coin, Float.valueOf(result), measureDate);
 
             if (obj != null) {
                 System.out.println(obj.getString("currency"));

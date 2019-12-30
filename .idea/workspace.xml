@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7164e878-e8a3-47b6-9de6-815388235bb8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModelLite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/currency.db" beforeDir="false" afterPath="$PROJECT_DIR$/currency/currency.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/HistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/dao/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/dao/SQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/services/HistoryMeasureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/java/com/project/currency/services/HistoryMeasureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency/src/main/resources/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency/src/main/resources/templates/history.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/currency/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,69 +41,46 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="currency" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="currency" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="currency" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="currency.db" type="feb32156:DbDataSourceImpl" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="345">
+              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#594#595#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Exchange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="42" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/crypto.html">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="175">
+              <caret line="78" column="38" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="38" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#736#737#0" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#822#823#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -98,8 +88,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+            <state relative-caret-position="692">
+              <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,6 +131,46 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="74" column="81" lean-forward="true" selection-start-line="74" selection-start-column="81" selection-end-line="74" selection-end-column="81" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6364#6365#0" expanded="true" />
+                <element signature="e#6427#6428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModelLite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="21" />
+              <folding>
+                <element signature="e#340#341#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#484#485#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/services/HistoryMeasureService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="45" column="32" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="45" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -141,6 +183,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Update Bitmart BTC</find>
+      <find>database path</find>
+      <find>currency.db</find>
+      <find>out</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,14 +204,25 @@
         <option value="$PROJECT_DIR$/currency/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/currency/src/main/resources/templates/admin_create_user.html" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Data.java" />
-        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java" />
-        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java" />
-        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java" />
         <option value="$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java" />
         <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java" />
+        <option value="$PROJECT_DIR$/currency/db.sql" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/services/HistoryMeasureService.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModel.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/Config.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/dao/SQL.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModelLite.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/HistoryController.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/resources/templates/ranking.html" />
+        <option value="$PROJECT_DIR$/currency/src/main/resources/templates/history.html" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java" />
+        <option value="$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java" />
       </list>
     </option>
   </component>
@@ -187,7 +243,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -238,16 +294,54 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="currency" type="462c0819:PsiDirectoryNode" />
+              <item name="arbs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoApp" type="462c0819:PsiDirectoryNode" />
+              <item name="currency" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="currency" type="462c0819:PsiDirectoryNode" />
               <item name="controlers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoApp" type="462c0819:PsiDirectoryNode" />
+              <item name="currency" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="currency" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoApp" type="462c0819:PsiDirectoryNode" />
+              <item name="currency" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CryptoApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CryptoApp" type="462c0819:PsiDirectoryNode" />
+              <item name="currency" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="ExpandSpringBootSpringBootSettingsPanel" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -255,7 +349,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576190782467" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577746882544" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -323,11 +417,12 @@
       <workItem from="1575827340743" duration="380000" />
       <workItem from="1575909369404" duration="7149000" />
       <workItem from="1576619705423" duration="21000" />
+      <workItem from="1577742194405" duration="2522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35181000" />
+    <option name="totallyTimeSpent" value="39175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
@@ -343,15 +438,15 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2980198" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4049505" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26831684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970297" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.52970296" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" weight="0.32970297" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23465346" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32970297" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32970297" />
@@ -361,88 +456,18 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32960597" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.32960597" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.185836" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.23861386" />
-      <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/CryptoApp.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20190722/json-20190722.jar!/org/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -476,13 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/currency/src/main/resources/css/mycss.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -493,22 +511,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/admin_login_panel.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/AdminControler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-553">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="das://1e248df7-d4c4-47c6-b6a7-c138e41c171a/schema/main/table/user" />
     <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/admin_panel.html">
@@ -528,20 +532,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/history.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ApiCall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/ranking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -555,12 +549,253 @@
     <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java">
+    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2079">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="-67">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/crypto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ChartObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/repositories/VipApplicationRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/repositories/CurrencyMeasureRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.2.1.RELEASE/spring-boot-autoconfigure-2.2.1.RELEASE.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="106" column="50" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1362">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/SQLiteDialect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/dao/SQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/AdminControler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/HistoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/HistoryModelLite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/services/HistoryMeasureService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="45" column="32" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="45" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="78" column="38" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -584,23 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Scanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/models/ArbModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Orderbook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -612,73 +830,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/arbs.html">
+    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/ArbsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="70">
+          <caret line="74" column="81" lean-forward="true" selection-start-line="74" selection-start-column="81" selection-end-line="74" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#6364#6365#0" expanded="true" />
+            <element signature="e#6427#6428#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/arbs/MainArbs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/CurrencyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/resources/templates/crypto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/CryptoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="42" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/currency/src/main/java/com/project/currency/controlers/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
         </state>
       </provider>
     </entry>

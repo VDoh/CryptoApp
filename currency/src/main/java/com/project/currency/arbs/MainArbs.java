@@ -24,6 +24,15 @@ public class MainArbs {
     private ArrayList<Exchange> exchanges;
     private ArrayList<String> currencies;
     private int delay = 2;
+    private boolean logs = false;
+
+    public void setLogs(boolean logs) {
+        this.logs = logs;
+    }
+
+    public boolean getLogs() {
+        return this.logs;
+    }
 
     public void run() {
         try {
@@ -61,12 +70,14 @@ public class MainArbs {
                         ArbModel arb = new ArbModel(entry.getKey(), arbPair.getBidExch(), arbPair.getAskExch(), arbPair.getBid(), arbPair.getAsk(), arbPair.getArbVal());
                         Data.getInstance().addToList(arb);
 
-                        System.out.println(entry.getKey());
-                        System.out.println(" ");
-                        System.out.println("ARB VALUE: " + arbPair.getArbVal());
-                        System.out.println("BID: " + arbPair.getBidExch() + " = " + arbPair.getBid());
-                        System.out.println("ASK: " + arbPair.getAskExch() + " = " + arbPair.getAsk());
-                        System.out.println("------------");
+                        if (logs) {
+                            System.out.println(entry.getKey());
+                            System.out.println(" ");
+                            System.out.println("ARB VALUE: " + arbPair.getArbVal());
+                            System.out.println("BID: " + arbPair.getBidExch() + " = " + arbPair.getBid());
+                            System.out.println("ASK: " + arbPair.getAskExch() + " = " + arbPair.getAsk());
+                            System.out.println("------------");
+                        }
                     }
                 }
             }
