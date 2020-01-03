@@ -1,108 +1,52 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-          rel="stylesheet">
     <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
     <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-    <link rel="stylesheet" href="\resources\css\mycss.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <meta charset="ISO-8859-1">
-
 </head>
 <body>
-<!--header.html  that's here  -->
 <div th:replace="fragments/header :: header"></div>
+<div class="centerShit">
     <center>
-        <h2>Cryptocurrency</h2>
-        <form th:action="@{/crypto}" th:object="${ApiCall}" method="post">
-            <select name="currency" id="currency" style="display: block;">
-                <option value = "BTC">BTC</option>
-                <option value = "ETH">ETH</option>
-                <option value = "USDT">USDT</option>
-                <option value = "XRP">XRP</option>
-                <option value = "BCH">BCH</option>
-            </select>
-            <br/>
-            <input type="submit" value="check"/>
-        </form>
-        <h2>Price</h2>
-        <div class="table-wrapper">
-            <table class="fl-table">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Nomics</th>
-                    <th>CoinMarketCap</th>
-                </tr>
-                </thead>
-                    <td th:text="${chartData.currency}"></td>
-                    <td th:text="${nomics}"></td>
-                    <td th:text="${coinMarket}"></td>
-                <tbody>
-            </table>
-        </div>
+    <label for="note">Podziel się swoimi opiniami na forum anonimowo</label>
+<form th:action="@{/notes}" th:object="${notesClass}" class="ddd" method="post">
 
-        <div class="container">
-            <h2 align="center">Chart</h2>
-
-            <div id="container"
-                 style="width: 800px; height: 600px; margin: 0 auto"></div>
-        </div>
-        <script
-                src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script
-                src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script th:inline="javascript">
-            $(function(){
-                Highcharts.chart('container', {
-                    chart: {
-                        type: 'line'
-                    },
-                    title: {
-                        text: [[${chartData.currency}]]
-                    },
-                    subtitle: {
-                        text: 'Date'
-                    },
-                    xAxis: {
-                        categories: [[${chartData.timestamps}]],
-                        crosshair: true
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Price'
-                        }
-                    },
-                    tooltip: {
-                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                            '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
-                        footerFormat: '</table>',
-                        shared: true,
-                        useHTML: true
-                    },
-                    series: [{
-                        name: 'Price',
-                        data: [[${chartData.prices}]]
-                    }]
-                });
-            });
-        </script>
-
-        <h2></h2>
+    <textarea maxlength="200" type="text" id="note" name="note" autofocus="autofocus"></textarea>
+    <br/>
+    <input type="submit" value="Add Note"/>
+</form>
     </center>
-
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <th>Note</th>
+        <th>Date</th>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${history}">
+            <td th:text="${item.note}"></td>
+            <td th:text="${item.date}"></td>
+        <tbody>
+    </table>
+</div>
+</div>
 <!--footer.html  that's here  -->
 <div th:replace="fragments/footer :: footer"></div>
+
 <style>
+
 /* table */
 *{
     box-sizing: border-box;
@@ -112,19 +56,20 @@
 
 .centerShit
 {
-    margin-top: 20px;
-    height: 499px;
-    overflow: auto;
+margin-top: 20px;
+     height: 999px;
+     overflow: auto;
 }
 
+
 .centerShit th div {
-    position: absolute;
-    margin-top: -20px;
+     position: absolute;
+     margin-top: -20px;
 }
 
 .resize{
-    width: 30px;
-    height: auto;
+width: 30px;
+height: auto;
 }
 
 h2{
@@ -150,8 +95,8 @@ h2{
     font-weight: normal;
     border: none;
     border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
+    width: 50%;
+    max-width: 50%;
     white-space: nowrap;
     background-color: white;
 }
@@ -162,8 +107,6 @@ h2{
     font-weight: normal;
     border: none;
     border-collapse: collapse;
-    width: 10px;
-    max-width: 10px;
     white-space: nowrap;
     background-color: white;
 }
@@ -174,8 +117,6 @@ h2{
     font-weight: normal;
     border: none;
     border-collapse: collapse;
-    width: 10px;
-    max-width: 10px;
     white-space: nowrap;
     background-color: white;
 }
@@ -236,20 +177,20 @@ h2{
     }
 
     .f1-table  td:first-child {
-        border-left: none;
-        width: 10px;
-        min-width: 10px;
-        max-width: 10px;
+          border-left: none;
+          width: 10px;
+          min-width: 10px;
+          max-width: 10px;
     }
     .f1-table thead th:first-child {
-        border-left: none;
-        width: 10px;
-        min-width: 10px;
-        max-width: 10px;
+          border-left: none;
+          width: 10px;
+          min-width: 10px;
+          max-width: 10px;
     }
     .fl-table td, .fl-table th {
         padding: 20px .625em .625em .625em;
-        height: 60px;
+        max-height: 60px;
         vertical-align: middle;
         box-sizing: border-box;
         overflow-x: hidden;
@@ -284,12 +225,16 @@ h2{
     }
 }
 
+z
+
+/* FOR ALL*/
+
+
 
 body
 {
 background-color: #15DgEc; /* The page background will be black */
-color: black; /* The page text will be white */
-position: relative;
+color: white; /* The page text will be white */
 }
 
 #mainnav ul {
@@ -403,8 +348,8 @@ padding-bottom: 50px;
 
 footer {
 background: #0263D4;
-position: relative;
-  bottom: 0;
+ position: relative;
+ bottom: 0;
   width: 100%;
 }
 
