@@ -180,7 +180,7 @@ public class Processor implements Callable<Map<String, Processor.Pair> > {
         return arbs;
     }
 
-    private Float calculateArb (Pair pair) {
+    public Float calculateArb (Pair pair) {
         return ((pair.bid - pair.ask) / pair.ask) * 100;
     }
 
