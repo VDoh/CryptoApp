@@ -23,7 +23,7 @@
     <label for="note">Podziel się swoimi opiniami na forum anonimowo</label>
 <form th:action="@{/notes}" th:object="${notesClass}" class="ddd" method="post">
 
-    <textarea maxlength="200" type="text" id="note" name="note" autofocus="autofocus"></textarea>
+    <textarea maxlength="260" type="text" id="note" name="note" autofocus="autofocus"></textarea>
     <br/>
     <input type="submit" value="Add Note"/>
 </form>
